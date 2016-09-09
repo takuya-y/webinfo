@@ -1,0 +1,28 @@
+
+<%= page_entries_info @topics %>
+
+<div class="center">
+  <div class="content">
+    <table border=1>
+      <% @topics.each do |topic| %>
+        <tr>
+          <td>
+            <!-- <p><a href="<%= topic.link %>"><%= topic.title %></a></p> -->
+            <p><%= link_to topic.title, topic.link, :target=>["_blank"] %></p>
+          </td>
+          <td>
+            <%= topic.img.html_safe %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<%= paginate @topics %>
+
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    ふっただよ〜
+  </div>
+</nav> -->
